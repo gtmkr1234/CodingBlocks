@@ -4,8 +4,8 @@ import java.util.*;
 
 public class class8_2 {
     public static void main(String[] args) {
-        int [] arr = {1,2,3,4};
-        int max =0;
+        int [] arr = {1,2,3,4,-10,-4};
+        int min =Integer.MAX_VALUE;
         List<Integer> res = new ArrayList<>();
         for (int i = 0; i < arr.length; i++) {
             for (int j = i; j < arr.length; j++) {
@@ -15,14 +15,14 @@ public class class8_2 {
                     sum+=arr[k];
                     temp.add(arr[k]);
                 }
-                if(sum>max){
+                if(sum<min){
                     res = temp;
-                    max = Math.max(sum,max);
+                    min = Math.min(sum,min);
                 }
             }
         }
 
-        System.out.println("Maximum sum of subarray is: " + max);
-        System.out.println("Maximum sub array is : "+ res);
+        System.out.println("Minimum sum of subarray is: " + min);
+        System.out.println("Minimum sub array is : "+ res);
     }
 }
